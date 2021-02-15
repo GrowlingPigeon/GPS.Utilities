@@ -5,7 +5,7 @@ namespace GrowlingPigeonStudio.Utilities
   /// <summary>
   /// GPS Logger.
   /// </summary>
-  public static class Logger
+  public static class GPSLogger
   {
     /// <summary>
     /// Logs information.
