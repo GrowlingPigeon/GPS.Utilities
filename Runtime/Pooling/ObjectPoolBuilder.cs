@@ -17,7 +17,7 @@ namespace GrowlingPigeonStudio.Utilities
     /// <summary>
     /// Generate callback.
     /// </summary>
-    private Func<T>? generateCallback = null;
+    private Func<T?>? generateCallback = null;
 
     /// <summary>
     /// Recycle callback.
@@ -34,7 +34,7 @@ namespace GrowlingPigeonStudio.Utilities
     /// </summary>
     /// <param name="callback">Callback.</param>
     /// <returns>Builder.</returns>
-    public ObjectPoolBuilder<T> AddGeneratorCallback(Func<T>? callback)
+    public ObjectPoolBuilder<T> AddGeneratorCallback(Func<T?>? callback)
     {
       this.generateCallback = callback;
       return this;

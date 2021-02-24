@@ -22,7 +22,7 @@ namespace GrowlingPigeonStudio.Utilities
     /// <summary>
     /// Generator callback. Performs generation of object if object pool is empty.
     /// </summary>
-    private readonly Func<T>? generateCallback;
+    private readonly Func<T?>? generateCallback;
 
     /// <summary>
     /// Get callback. Performs actions on objects that are taken from the object pool.
@@ -50,7 +50,7 @@ namespace GrowlingPigeonStudio.Utilities
     /// <param name="generateCallback">Generator callback.</param>
     /// <param name="getCallback">Get callback.</param>
     /// <param name="recycleCallback">Recycle callback.</param>
-    public ObjectPool(Func<T>? generateCallback, Action<T>? getCallback, Action<T>? recycleCallback)
+    public ObjectPool(Func<T?>? generateCallback, Action<T>? getCallback, Action<T>? recycleCallback)
     {
       this.generateCallback = generateCallback;
       this.getCallback = getCallback;
