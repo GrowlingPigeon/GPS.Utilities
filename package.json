@@ -1,11 +1,11 @@
 {
-    "name": "com.growlingpigeon.utilities",
-    "version": "1.0.0",
-    "displayName": "GPS Utilities",
-    "description": "Standard Unity Utilites for Growling Pidgeon Studio",
-    "unity": "2020.2",
-    "author": {
-        "name": "Growling Pidgeon",
-        "url": "http://growlingpigeon.com/"
-    }
+	"name": "com.growlingpigeon.utilities",
+	"version": "2.0.0",
+	"displayName": "GPS Utilities",
+	"description": "Standard Unity Utilites for Growling Pidgeon Studio",
+	"unity": "2020.2",
+	"author": {
+		"name": "Growling Pidgeon",
+		"url": "http://growlingpigeon.com/"
+	}
 }
