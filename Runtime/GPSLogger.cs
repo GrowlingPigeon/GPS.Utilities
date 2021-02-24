@@ -1,5 +1,7 @@
 using UnityEngine;
 
+#nullable enable
+
 namespace GrowlingPigeonStudio.Utilities
 {
   /// <summary>
@@ -12,10 +14,10 @@ namespace GrowlingPigeonStudio.Utilities
     /// </summary>
     /// <param name="message">Message.</param>
     /// <param name="data">Data objects.</param>
-    public static void LogDebug(string message, params object[] data)
+    public static void LogDebug(string? message, params object?[] data)
     {
 #if UNITY_EDITOR
-    Debug.Log(string.Concat(string.Format(message, data)));
+      Debug.Log(string.Format(message, data));
 #endif
     }
 
@@ -24,10 +26,10 @@ namespace GrowlingPigeonStudio.Utilities
     /// </summary>
     /// <param name="message">Message.</param>
     /// <param name="data">Data objects.</param>
-    public static void LogWarning(string message, params object[] data)
+    public static void LogWarning(string? message, params object?[] data)
     {
 #if UNITY_EDITOR
-    Debug.LogWarning(string.Concat(string.Format(message, data)));
+      Debug.LogWarning(string.Format(message, data));
 #endif
     }
 
@@ -36,10 +38,10 @@ namespace GrowlingPigeonStudio.Utilities
     /// </summary>
     /// <param name="message">Message.</param>
     /// <param name="data">Data objects.</param>
-    public static void LogError(string message, params object[] data)
+    public static void LogError(string? message, params object?[] data)
     {
 #if UNITY_EDITOR
-    Debug.LogError(string.Concat(string.Format(message, data)));
+      Debug.LogError(string.Format(message, data));
 #endif
     }
   }
