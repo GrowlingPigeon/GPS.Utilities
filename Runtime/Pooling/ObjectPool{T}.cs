@@ -85,7 +85,6 @@ namespace GrowlingPigeonStudio.Utilities
     /// <typeparam name="T">Object type for the pool.</typeparam>
     /// <returns>Default object pool.</returns>
     public static ObjectPool<T> Default()
-      where T : class
     {
       return new ObjectPool<T>(null, null, null);
     }

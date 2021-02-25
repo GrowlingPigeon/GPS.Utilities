@@ -1,6 +1,6 @@
 {
 	"name": "com.growlingpigeon.utilities",
-	"version": "2.1.1",
+	"version": "2.1.2",
 	"displayName": "GPS Utilities",
 	"description": "Standard Unity Utilites for Growling Pidgeon Studio",
 	"unity": "2020.2",
