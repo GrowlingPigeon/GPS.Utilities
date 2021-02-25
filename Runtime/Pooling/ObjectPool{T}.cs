@@ -15,9 +15,14 @@ namespace GrowlingPigeonStudio.Utilities
     where T : class
   {
     /// <summary>
+    /// Default start capacity.
+    /// </summary>
+    private const int DEFAULT_START_CAPACITY = 16;
+
+    /// <summary>
     /// Stack of objects. Stack is just as good as List but makes adding and removing easier to code and maintain.
     /// </summary>
-    private readonly Stack<T> objects = new Stack<T>();
+    private readonly Stack<T> objects;
 
     /// <summary>
     /// Generator callback. Performs generation of object if object pool is empty.
@@ -50,11 +55,28 @@ namespace GrowlingPigeonStudio.Utilities
     /// <param name="generateCallback">Generator callback.</param>
     /// <param name="getCallback">Get callback.</param>
     /// <param name="recycleCallback">Recycle callback.</param>
-    public ObjectPool(Func<T?>? generateCallback, Action<T>? getCallback, Action<T>? recycleCallback)
+    /// <param name="startingCapacity">Starting capacity.</param>
+    public ObjectPool(
+      Func<T?>? generateCallback,
+      Action<T>? getCallback,
+      Action<T>? recycleCallback,
+      int startingCapacity)
     {
       this.generateCallback = generateCallback;
       this.getCallback = getCallback;
       this.recycleCallback = recycleCallback;
+      this.objects = new Stack<T>(startingCapacity);
+    }
+
+    /// <summary>
+    /// Initializes a new instance of the <see cref="ObjectPool{T}"/> class.
+    /// </summary>
+    /// <param name="generateCallback">Generator callback.</param>
+    /// <param name="getCallback">Get callback.</param>
+    /// <param name="recycleCallback">Recycle callback.</param>
+    public ObjectPool(Func<T?>? generateCallback, Action<T>? getCallback, Action<T>? recycleCallback)
+      : this(generateCallback, getCallback, recycleCallback, DEFAULT_START_CAPACITY)
+    {
     }
 
     /// <summary>
